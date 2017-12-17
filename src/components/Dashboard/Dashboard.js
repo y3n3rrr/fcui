@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import WelcomeDash from './WelcomeDash'
 
 class Dashboard extends Component {
+    componentDidMount(){
+    }
     render() {
         return (
             <div>
