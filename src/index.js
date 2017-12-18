@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import {appState} from './AppState'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App appState={appState} />, document.getElementById('root'));
 registerServiceWorker();

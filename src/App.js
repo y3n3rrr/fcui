@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //components
 import Navbar from './components/Navbar'
 import Dashboard from './components/Dashboard'
-import FileU from './components/FileUpload'
+import FileUpload from './components/FileUpload'
 //styles
 //modules
 import {
@@ -13,19 +13,23 @@ import {
 } from 'react-router-dom'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+  }
   render() {
     return (
+      <Router>
       <div className="dashboard2 site-navbar-small">
         <Navbar />
         <div className="main-content">
-        <Router>
             <Switch>
               <Route exact path="/" component={Dashboard} />
-              <Route exact path="/file" component={FileU} />
+              <Route exact path="/file" render={routeProps => <FileUpload {...routeProps} appState={this.props.appState} />} /> 
+              {/* <Route path="/watch" render={routeProps => <VideoDetail {...routeProps} appState={this.props.appState} />} /> */}
             </Switch>
-          </Router>
         </div>
       </div>
+          </Router>
     );
   }
 }

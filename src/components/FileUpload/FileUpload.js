@@ -41,7 +41,25 @@ const uploader = new FineUploaderTraditional({
 })
 
 class FileUpload extends Component {
-   
+  constructor(props){
+    super(props)
+    this.appState=this.props.appState
+    this.checkedGender='0'
+  }
+  onSubmit = (e) => {
+    debugger
+    e.preventDefault();
+    const formData = {
+      name: this.name.value,
+      surname: this.surname.value,
+      gender: this.checkedGender
+    };
+    //this.props.appState.postSaveComment(formData);
+   }
+   onGenderChange=(val)=>{
+     debugger
+     this.checkedGender=val;
+   }
     render() {
         return (
             <div className="page-content">
@@ -54,63 +72,57 @@ class FileUpload extends Component {
                     {/* Start Icon With Simple Form */}
                     <h4 className="list-title">Simple Forms With Icon</h4>
                     <div className="margin-vertical-20">
-                      <form className="form-horizontal">
+                      <form className="form-horizontal" onSubmit={this.onSubmit}>
                         <div className="form-group">
-                          <label className="col-sm-3 control-label">Your Name: </label>
+                          <label className="col-sm-3 control-label">Name: </label>
                           <div className="col-sm-9">
                             <div className="input-group input-group-icon">
                               <span className="input-group-addon">
                                 <span className="icon" data-icon="" />
                               </span>
-                              <input type="text" className="form-control" placeholder="Username" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="form-group form-material">
-                          <label className="col-sm-3 control-label">Your Gender: </label>
-                          <div className="col-sm-9">
-                            <div className="radio-custom radio-default radio-inline padding-top-0">
-                              <input type="radio" id="inputHorizontalMale2" name="inputRadiosMale2" />
-                              <label htmlFor="inputHorizontalMale2">Male</label>
-                            </div>
-                            <div className="radio-custom radio-default radio-inline padding-top-0">
-                              <input type="radio" id="inputHorizontalFemale2" name="inputRadiosMale2" defaultChecked />
-                              <label htmlFor="inputHorizontalFemale2">Female</label>
+                              <input type="text" className="form-control" placeholder="Username" ref={(input)=>{this.name=input}}  defaultValue="Mehmet Yener"/>
                             </div>
                           </div>
                         </div>
                         <div className="form-group">
-                          <label className="col-sm-3 control-label">Your Email: </label>
+                          <label className="col-sm-3 control-label">Surname: </label>
+                          <div className="col-sm-9">
+                            <div className="input-group input-group-icon">
+                              <span className="input-group-addon">
+                                <span className="icon" data-icon="" />
+                              </span>
+                              <input type="text" className="form-control" placeholder="Surname" ref={(input)=>{this.surname=input}} defaultValue="YILMAZ"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="form-group form-material">
+                          <label className="col-sm-3 control-label">Gender: </label>
+                          <div className="col-sm-9">
+                          <label className="control control-radio">Male
+									<input type="radio" name="gender" onChange={()=>this.onGenderChange('0')} defaultChecked/>
+									<span className="control_indicator"></span>
+									</label>
+                        <label className="control control-radio">Female
+									<input type="radio" name="gender" onChange={()=>this.onGenderChange('1')}/>
+									<span className="control_indicator"></span>
+									</label>
+                          </div>
+                        </div>
+                        <div className="form-group">
+                          <label className="col-sm-3 control-label">Birthdate: </label>
                           <div className="col-sm-9">
                             <div className="input-group input-group-icon">
                               <span className="input-group-addon">
                                 <span className="icon" data-icon="" />
                               </span>
-                              <input type="text" className="form-control" placeholder="Email" />
+                              <input type="text" className="form-control" placeholder="Email" defaultValue="24.08.1989"/>
                             </div>
                           </div>
                         </div>
-                        <div className="form-group">
-                          <label className="col-sm-3 control-label">Password: </label>
-                          <div className="col-sm-9">
-                            <div className="input-group">
-                              <div className="input-group-addon"><i className="icon icon_lock" /></div>
-                              <input type="password" className="form-control" id="Inputpwd1" placeholder="Enter Password" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="form-group">
-                          <label className="col-sm-3 control-label">Confirm Password: </label>
-                          <div className="col-sm-9">
-                            <div className="input-group">
-                              <div className="input-group-addon"><i className="icon icon_lock" /></div>
-                              <input type="password" className="form-control" id="Inputpwd2" placeholder="Enter confirm Password" />
-                            </div>
-                          </div>
-                        </div>
+                        
                         <div className="form-group form-material">
                           <div className="col-sm-9 col-sm-offset-3">
-                            <button type="button" className="btn btn-info waves-effect waves-light">Submit </button>
+                            <button type="submit" className="btn btn-info waves-effect waves-light">Submit </button>
                             <button type="reset" className="btn btn-dark waves-effect waves-light">Reset</button>
                           </div>
                         </div>
