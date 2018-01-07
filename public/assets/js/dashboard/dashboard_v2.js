@@ -139,87 +139,87 @@ jQuery(document).on("ready", function ()
 
     /*-------Ribbon Chord Chart-------*/
 
-    var myChart6 = echarts.init(document.getElementById('non-ribbon-chord'));
-    myChart6.setOption({
-        tooltip: {
-            trigger: 'item',
-            formatter: function (params) {
-                if (params.indicator2) {
-                    return params.indicator2 + ' ' + params.name + ' ' + params.indicator;
-                } else {
-                    return params.name
-                }
-            }
-        },
-        toolbox: {
-            show: true,
-            feature: {
-//            restore: {show: true},
-//            magicType: {show: true, type: ['force', 'chord']},
-                saveAsImage: {show: true}
-            }
-        },
-        legend: {
-            x: 'left',
-            show: true,
-            data: ['AA', 'BB', 'CC'],
-            textStyle: {color: 'black'}
-        },
-        series: [
-            {
-                name: 'German league team effectiveness',
-                type: 'chord',
-                sort: 'ascending',
-                sortSub: 'descending',
-                ribbonType: false,
-                radius: '60%',
-                itemStyle: {
-                    normal: {
-                        label: {
-                            rotate: true
-                        }
-                    }
-                },
-                minRadius: 7,
-                maxRadius: 20,
-                nodes: [
-                    {name: 'AA 1'},
-                    {name: 'AA 2'},
-                    {name: 'AA 3'},
-                    {name: 'BB 1'},
-                    {name: 'BB 2'},
-                    {name: 'BB 3'},
-                    {name: 'BB 4'},
-                    {name: 'BB 5'},
-                    {name: 'BB 6', symbol: 'star'},
-                    {name: 'BB 7'},
-                    {name: 'CC 1'},
-                    {name: 'CC 2'},
-                    {name: 'CC 3'},
-                    {name: 'CC 4'},
-                    {name: 'AA'},
-                    {name: 'BB'},
-                    {name: 'CC'}
-                ],
-                links: [
-                    {source: 'AA', target: 'AA 1', weight: 1, name: 'Effect'},
-                    {source: 'AA', target: 'AA 2', weight: 1, name: 'Effect'},
-                    {source: 'AA', target: 'AA 3', weight: 1, name: 'Effect'},
-                    {source: 'BB', target: 'BB 1', weight: 1, name: 'Effect'},
-                    {source: 'BB', target: 'BB 2', weight: 1, name: 'Effect'},
-                    {source: 'BB', target: 'BB 3', weight: 1, name: 'Effect'},
-                    {source: 'BB', target: 'BB 4', weight: 1, name: 'Effect'},
-                    {source: 'BB', target: 'BB 5', weight: 1, name: 'Effect'},
-                    {source: 'BB', target: 'BB 6', weight: 1, name: 'Effect'},
-                    {source: 'BB', target: 'BB 7', weight: 1, name: 'Effect'},
-                    {source: 'CC', target: 'CC 1', weight: 1, name: 'Effect'},
-                    {source: 'CC', target: 'CC 2', weight: 1, name: 'Effect'},
-                    {source: 'CC', target: 'CC 3', weight: 1, name: 'Effect'},
-                    {source: 'CC', target: 'CC 4', weight: 1, name: 'Effect'}
-                ]
-            }
-        ]
-    });
+//     var myChart6 = echarts.init(document.getElementById('non-ribbon-chord'));
+//     myChart6.setOption({
+//         tooltip: {
+//             trigger: 'item',
+//             formatter: function (params) {
+//                 if (params.indicator2) {
+//                     return params.indicator2 + ' ' + params.name + ' ' + params.indicator;
+//                 } else {
+//                     return params.name
+//                 }
+//             }
+//         },
+//         toolbox: {
+//             show: true,
+//             feature: {
+// //            restore: {show: true},
+// //            magicType: {show: true, type: ['force', 'chord']},
+//                 saveAsImage: {show: true}
+//             }
+//         },
+//         legend: {
+//             x: 'left',
+//             show: true,
+//             data: ['AA', 'BB', 'CC'],
+//             textStyle: {color: 'black'}
+//         },
+//         series: [
+//             {
+//                 name: 'German league team effectiveness',
+//                 type: 'chord',
+//                 sort: 'ascending',
+//                 sortSub: 'descending',
+//                 ribbonType: false,
+//                 radius: '60%',
+//                 itemStyle: {
+//                     normal: {
+//                         label: {
+//                             rotate: true
+//                         }
+//                     }
+//                 },
+//                 minRadius: 7,
+//                 maxRadius: 20,
+//                 nodes: [
+//                     {name: 'AA 1'},
+//                     {name: 'AA 2'},
+//                     {name: 'AA 3'},
+//                     {name: 'BB 1'},
+//                     {name: 'BB 2'},
+//                     {name: 'BB 3'},
+//                     {name: 'BB 4'},
+//                     {name: 'BB 5'},
+//                     {name: 'BB 6', symbol: 'star'},
+//                     {name: 'BB 7'},
+//                     {name: 'CC 1'},
+//                     {name: 'CC 2'},
+//                     {name: 'CC 3'},
+//                     {name: 'CC 4'},
+//                     {name: 'AA'},
+//                     {name: 'BB'},
+//                     {name: 'CC'}
+//                 ],
+//                 links: [
+//                     {source: 'AA', target: 'AA 1', weight: 1, name: 'Effect'},
+//                     {source: 'AA', target: 'AA 2', weight: 1, name: 'Effect'},
+//                     {source: 'AA', target: 'AA 3', weight: 1, name: 'Effect'},
+//                     {source: 'BB', target: 'BB 1', weight: 1, name: 'Effect'},
+//                     {source: 'BB', target: 'BB 2', weight: 1, name: 'Effect'},
+//                     {source: 'BB', target: 'BB 3', weight: 1, name: 'Effect'},
+//                     {source: 'BB', target: 'BB 4', weight: 1, name: 'Effect'},
+//                     {source: 'BB', target: 'BB 5', weight: 1, name: 'Effect'},
+//                     {source: 'BB', target: 'BB 6', weight: 1, name: 'Effect'},
+//                     {source: 'BB', target: 'BB 7', weight: 1, name: 'Effect'},
+//                     {source: 'CC', target: 'CC 1', weight: 1, name: 'Effect'},
+//                     {source: 'CC', target: 'CC 2', weight: 1, name: 'Effect'},
+//                     {source: 'CC', target: 'CC 3', weight: 1, name: 'Effect'},
+//                     {source: 'CC', target: 'CC 4', weight: 1, name: 'Effect'}
+//                 ]
+//             }
+//         ]
+//     });
 
 
     /*-------Flot-------*/
@@ -297,7 +297,7 @@ jQuery(document).on("ready", function ()
 
 
     window.onresize = function () {
-        myChart6.resize();
+       // myChart6.resize();
     }
 
 });
